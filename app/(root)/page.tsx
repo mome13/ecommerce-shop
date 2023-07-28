@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { UserButton } from "@clerk/nextjs";
 
 export default function page() {
   return (
@@ -6,6 +7,8 @@ export default function page() {
       <Button size='default' variant='outline'>
         Mehran
       </Button>
+
+      <UserButton afterSignOutUrl="/"/>
     </div>
   );
 }
