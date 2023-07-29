@@ -1,14 +1,20 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
-import { UserButton } from "@clerk/nextjs";
+import { Modal } from '@/components/ui/modal';
+import { useStoreModal } from '@/hooks/use-store-modal';
+import { UserButton } from '@clerk/nextjs';
+import { useEffect } from 'react';
 
-export default function page() {
+export default function SetupPage() {
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
+
+  useEffect(() => {
+    if (!isOpen) onOpen();
+  }, [isOpen, onOpen]);
+
   return (
-    <div className='flex h-screen justify-center items-center'>
-      <Button size='default' variant='outline'>
-        Mehran
-      </Button>
-
-      <UserButton afterSignOutUrl="/"/>
-    </div>
+    <div className='flex h-screen justify-center items-center'>root page</div>
   );
 }
