@@ -14,7 +14,8 @@ export default function SetupPage() {
     if (!isOpen) onOpen();
   }, [isOpen, onOpen]);
 
-  return (
-    <div className='flex h-screen justify-center items-center'>root page</div>
-  );
+  return null;
+  // return (
+  //   <div className='flex h-screen justify-center items-center'>root page</div>
+  // );
 }
